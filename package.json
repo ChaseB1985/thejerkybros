@@ -1,0 +1,27 @@
+{
+  "name": "thejerkybros",
+  "version": "1.0.0",
+  "description": "TheJerkyBros",
+  "main": "index.js",
+  "engines": {
+    "node": "8.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChaseB1985/thejerkybros.git"
+  },
+  "author": "Chase Barrier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChaseB1985/thejerkybros/issues"
+  },
+  "homepage": "https://github.com/ChaseB1985/thejerkybros#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongojs": "^2.6.0",
+    "mongoose": "^5.4.0"
+  }
+}
