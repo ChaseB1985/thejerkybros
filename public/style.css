@@ -47,11 +47,11 @@
     }
 
 
-    .panel1 { background-image:url(./assets/img/chase.jpeg); }
-    .panel2 { background-image:url(../assets/img/image2.jpeg); }
-    .panel3 { background-image:url(assets/img/image3.jpeg); }
+    .panel1 { background-image:url(img/chase.jpeg); }
+    .panel2 { background-image:url(img/image2.jpeg); }
+    .panel3 { background-image:url(img/image3.jpeg); }
     .panel4 { background-image:url(img/image1.jpeg); }
-    .panel5 { background-image:url(juan.jpeg); }
+    .panel5 { background-image:url(img/juan.jpeg); }
     
     
 
