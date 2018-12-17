@@ -6,14 +6,16 @@ var path = require('path');
 
 module.exports = function(app) {
 
-    // GET route for /survey returns survey.html.
+    //GET route for /survey returns survey.html.
     app.get('/login', function(req, res) {
-        res.sendFile(path.join(__dirname + '/public/login.html'));
+        res.sendFile(path.join(__dirname + '/../public/login.html'));
     });
 
     // USE route returns home.html for any undefined GET routes.
-    app.use(function (req, res) {
-        res.sendFile(path.join(__dirname + '/../public/home.html'));
-    });
-
-};
+    // app.use(function (req, res) {
+    //     res.sendFile(path.join(__dirname + '/'));
+    // });
+// app.use('/login', function(req, res){
+//   res.render('/public/login.html')
+// });
+}

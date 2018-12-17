@@ -2,7 +2,7 @@
   "name": "thejerkybros",
   "version": "1.0.0",
   "description": "TheJerkyBros",
-  "main": "index.js",
+  "main": "server.js",
   "engines": {
     "node": "8.11.1"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ChaseB1985/thejerkybros#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongojs": "^2.6.0",
     "mongoose": "^5.4.0",
