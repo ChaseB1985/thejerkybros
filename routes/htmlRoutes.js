@@ -10,7 +10,10 @@ module.exports = function(app) {
     app.get('/login', function(req, res) {
         res.sendFile(path.join(__dirname + '/../public/login.html'));
     });
-
+    app.get('/order', function(req, res) {
+        res.sendFile(path.join(__dirname + '/../public/order.html'));
+    });
+    
     // USE route returns home.html for any undefined GET routes.
     // app.use(function (req, res) {
     //     res.sendFile(path.join(__dirname + '/'));
