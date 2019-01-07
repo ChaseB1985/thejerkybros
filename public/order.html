@@ -63,13 +63,16 @@ crossorigin="anonymous"></script>
                 <label class="input-group-text" for="inputGroupSelect02">Options</label>
             </div>
             </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            <form class ="add-items">
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    
                 </div>
+            </form>
             </div>
             
 <script>
-    const submitItems = document.querySelector('.btn');
+    const submitItems = document.querySelector('.add-items');
     const items = [];
 
 function addItem(e){
@@ -77,6 +80,7 @@ function addItem(e){
 };
 
     submitItems.addEventListener('submit', addItem);
+    
 </script>        
 
 
