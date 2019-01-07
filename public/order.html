@@ -44,7 +44,7 @@ crossorigin="anonymous"></script>
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Options</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01">
+            <select class="custom-select" id="item1">
                 <option selected>Choose Flavor</option>
                 <option value="1">Bacon Chipotle</option>
                 <option value="2">Honey Garlic</option>
@@ -53,7 +53,7 @@ crossorigin="anonymous"></script>
             </div>
             
             <div class="input-group mb-3">
-            <select class="custom-select" id="inputGroupSelect02">
+            <select class="custom-select" id="item2">
                 <option selected>Choose Size</option>
                 <option value="1">8 oz. = $15</option>
                 <option value="2">16 oz. = $20</option>
@@ -76,10 +76,25 @@ crossorigin="anonymous"></script>
     const items = [];
 
 function addItem(e){
+    array[items] = document.getElementById("item1").value;
+    items++;
     console.log('hello');
+    e.preventDefault();
+    
+    const item = {
+        text: 'item name',
+        done: false
+    }
 };
+//items.push(item);
+//this.reset();
+function display_items(){
+    const e
+}
 
     submitItems.addEventListener('submit', addItem);
+    console.log(item);
+    console.log(items);
     
 </script>        
 
