@@ -78,23 +78,26 @@ crossorigin="anonymous"></script>
 function addItem(e){
     array[items] = document.getElementById("item1").value;
     items++;
+    document.getElementById("item1").value = "";
     console.log('hello');
     e.preventDefault();
     
-    const item = {
-        text: 'item name',
-        done: false
-    }
+    // const item = {
+    //     text: 'item name',
+    //     done: false
+   // }
 };
 //items.push(item);
 //this.reset();
-function display_items(){
-    const e
-}
+// function display_items(){
+//     const e
+// }
 
     submitItems.addEventListener('submit', addItem);
-    console.log(item);
+    //console.log(item);
     console.log(items);
+
+//function submitItems
     
 </script>        
 
