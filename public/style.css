@@ -18,7 +18,8 @@
     }
 
     .panels {
-      min-height:150vh;
+      min-height:75vh;
+      max-height: 300vh;
       overflow: hidden;
       display: flex;
     }
@@ -47,11 +48,11 @@
     }
 
 
-    .panel1 { background-image:url(img/chase.jpeg); }
+    .panel1 { background-image:url(img/image3.jpeg); }
     .panel2 { background-image:url(img/image2.jpeg); }
-    .panel3 { background-image:url(img/image3.jpeg); }
+    .panel3 { background-image:url(img/brand.jpg); }
     .panel4 { background-image:url(img/image1.jpeg); }
-    .panel5 { background-image:url(img/juan.jpeg); }
+    .panel5 { background-image:url(img/image4.jpeg); }
     
     
 
