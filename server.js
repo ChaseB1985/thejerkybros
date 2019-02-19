@@ -1,4 +1,5 @@
 // Dependencies
+require('dotenv').config()
 var express = require("express");
 var mysql = require("mysql");
 let bodyParser = require("body-parser");
@@ -19,9 +20,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/login', function(req, res){
 //   res.render('/public/login.html', {title: "login page"});
 // })
+
+// Requiring our models for syncing
 require("./routes/htmlRoutes")(app);
+const db = require('./models/index');
 
 // Set the app to listen on port 3000
-app.listen(3000, function() {
-  console.log("App running on port 3000!");
+// app.listen(3000, function() {
+//   console.log("App running on port 3000!");
+// });
+db.sequelize.sync().then(() => {
+  // inside our db sync callback, we start the server.
+  // this is our way of making sure the server is not listening
+  // to requests if we have not yet made a db connection
+  app.listen(3000, () => {
+    console.log(`App listening on PORT 3000`);
+  });
 });
