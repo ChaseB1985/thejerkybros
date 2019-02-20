@@ -7,9 +7,9 @@ var path = require('path');
 
 module.exports = function(app) {
 
-    //GET route for /survey returns survey.html.
-    app.get('/login', function(req, res) {
-        res.sendFile(path.join(__dirname + '/../public/login.ejs'));
+    
+    app.get('/index', function(req, res) {
+        res.sendFile(path.join(__dirname + '/./public/index.html'));
     });
     // app.post('/login', function(req, res){
     //     var person = {
