@@ -6,7 +6,7 @@ var router = express.Router();
 var jerky = require("../models/jerky");
 console.log('controller');
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
+router.get("/order", function(req, res) {
   jerky.all(function(data) {
     var hbsObject = {
       jerky: data

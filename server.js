@@ -11,8 +11,8 @@ const exphbs = require('express-handlebars');
 const mysql = require('mysql');
 // const mysql2 = require('mysql2');
 // // controller imports
-// const userController = require('./controllers/user-controller');
-// const viewsController = require('./controllers/views-controller');
+const userController = require('./controllers/user-controller');
+const viewsController = require('./controllers/views-controller');
 const routes = require('./controllers/jerky-controller');
 // directory references
 //was client
@@ -49,11 +49,11 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 // hook up our controllers
-//app.use(userController);
-//app.use(viewsController);
 
 //require("./routes/htmlRoutes")(app);
 app.use(routes);
+app.use(userController);
+app.use(viewsController);
 
 // Requiring our models for syncing
 //const db = require('./models/index');

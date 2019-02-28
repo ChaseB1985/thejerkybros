@@ -102,3 +102,96 @@
 
 // // export the router so we can pass the routes to our server
 // module.exports = router;
+
+//var express = require("express");
+
+//var router = express.Router();
+
+// Import the model (cat.js) to use its database functions.
+//var user = require("../models/User");
+
+// router.get('/register', function(req, res){
+//   user.all(function(data) {
+//     var hbsObject = {
+//       user: data
+//     };
+//     console.log(hbsObject);
+//     res.render('login', hbsObject);
+//     console.log(data)
+//   });
+// }); //end of router
+    //var today = new Date();
+//     var users={
+//         "username":req.body.username,
+//         "email":req.body.email,
+//         "password":req.body.password,
+//        // "created_at":today,
+//         //"updated_at":today
+//     }
+//     connection.query('INSERT INTO users SET ?',users, function (error, results, fields) {
+//       if (error) {
+//         res.json({
+//             status:false,
+//             message:'there are some error with query'
+//         })
+//       }else{
+//           res.json({
+//             status:true,
+//             data:results,
+//             message:'user registered sucessfully'
+//         })
+//       }
+//     });
+
+// module.exports = router;
+const express = require("express");
+const router = express.Router();
+const user = require('../models/User');
+//const db = require("../models");
+
+
+
+
+router.get("/register", function(req, res){
+    //res.send("Get Users")
+    // router.get('/register', function(req, res){
+  user.all(function(data) {
+    var hbsObject = {
+      user: data
+    };
+    console.log(hbsObject);
+    res.render('login', hbsObject);
+    console.log(data)
+  });
+    //res.send('hello world'),
+    console.log("Get User");
+});
+console.log("Get User");
+
+router.post("/api/user", function(req, res){
+    // res.send("Post Users"),
+    // res.send('hello world')
+    user.create([
+      'username', 'email', 'password'
+    ],[
+      req.body.username, req.body.email, req.body.password
+    ], function(result){
+      res.json({ id: result.insertId });
+      console.log(id);
+      console.log(result);
+    });
+});
+
+router.put("/api/user/:id", function(req, res){
+    res.send("Update Users")
+})
+
+router.delete("/api/user/:id", function(req, res){
+    res.send("Delete Users")
+})
+// router.get("/login", function(req, res){
+//     res.send("login")
+// })
+
+
+module.exports = router;
