@@ -44,13 +44,22 @@ $(function() {
   function signup(e) {
     e.preventDefault();
     if (!validInput(['username', 'password', 'email'])) return;
+    // $.ajax('/register', {
+    //   method: 'POST',
+    //   data: {
+    //     username: $('[name="username"]').val(),
+    //     email: $('[name="email"]').val(),
+    //     password: $('[name="password"]').val()
+    //   }
     $.ajax('/register', {
-      method: 'POST',
+      type: 'POST',
       data: {
         username: $('[name="username"]').val(),
         email: $('[name="email"]').val(),
         password: $('[name="password"]').val()
       }
+      
+      
     }).then(({ user, authToken }) => {
       if (user && authToken.token) {
         $.cookie('auth_token', authToken.token, { expires: 7 });

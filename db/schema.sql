@@ -1,12 +1,21 @@
-DROP DATABASE IF EXISTS jerky_db;
+DROP DATABASE IF EXISTS jerky2_db;
 
-CREATE DATABASE jerky_db;
+CREATE DATABASE jerky2_db;
 
-USE jerky_db;
+USE jerky2_db;
  
-CREATE TABLE jerky_orders (
-	id INT AUTO_INCREMENT NOT NULL,
-    jerky_name VARCHAR(30) NOT NULL,
-    devoured BOOLEAN DEFAULT 0,
-    PRIMARY KEY (id)
+CREATE TABLE jerky (
+  id INT NOT NULL AUTO_INCREMENT,
+  flavor VARCHAR(45) NULL,
+  price DECIMAL(10,2) NULL,
+  quantity INT NULL,
+  purchased BOOLEAN DEFAULT false,
+  PRIMARY KEY (id)
+);
+CREATE TABLE user (
+id INT NOT NULL AUTO_INCREMENT,
+`username` VARCHAR (12) NULL,
+`email` VARCHAR (15) NULL,
+`password` VARCHAR (12) NULL,
+PRIMARY KEY (id)
 );

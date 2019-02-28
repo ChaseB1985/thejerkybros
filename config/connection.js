@@ -2,10 +2,10 @@ let mysql = require ("mysql");
 
 var connection = mysql.createConnection({
     host    : 'localhost',
-    port    : '3306',
+    port    : 3306,
     user    :'root',
     password : 'root',
-    database : 'jerky_db'
+    database : 'jerky2_db'
   });
 
   connection.connect(function(err) {
@@ -13,7 +13,16 @@ var connection = mysql.createConnection({
         console.error("error connecting: " +err.stack);
         return;
     }
-    console.log("connected as id " + connection.threadId);
+    console.log("hey hey you connected as id " + connection.threadId);
 });
+    // connection.connect(function(err){
+    //   if (err) throw err;
+    //   console.log('hey you connected');
+    //   let sql = `CREATE DATABASE jerky2_db`;
+    //   connection.query(sql, function (err, res){
+    //     if (err) throw err;
+    //     console.log('DB created');
+    //   });
+    // });
 
 module.exports = connection;
