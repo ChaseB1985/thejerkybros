@@ -1,4 +1,4 @@
-<h1>The Jerky Bros Login</h1>
+{{!-- <h1>The Jerky Bros Login</h1>
 <form>
   {{#if user}}
     <div class="form login-form">
@@ -13,7 +13,7 @@
       <input type="text" name="password" placeholder="password">
       <div class="buttons">
         <button class="button login">Login</button>
-        <a class="button signup" href="/register">Signup</a>
+        <a class="button " href="/register">Signup</a>
       </div>
     </div>
     <div class="form signup-form">
@@ -23,9 +23,29 @@
       <div class="buttons">
         <a class="button login" href="/register">Login</a>
         <button class="button signup">Signup</button>
-        <button class="button signup">register</button>
+        <button class="button register">register</button>
         <button type="submit">register</button>
       </div>
     </div>
   {{/if}}
+</form> --}}
+
+<form action="/api/user" method="POST">
+  <div>
+    <label htmlFor="username">Email:</label>
+    <input type="text" name="username" id="username" required>
+  </div>
+  <div>
+    <label htmlFor="email">Email:</label>
+    <input type="text" name="email" id="email" required>
+  </div>
+
+  <div>
+    <label htmlFor="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+  </div>
+
+  <div>
+    <input type="submit" value="Login">
+  </div>
 </form>
