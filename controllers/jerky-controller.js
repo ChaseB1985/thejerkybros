@@ -11,9 +11,9 @@ router.get("/order", function(req, res) {
     var hbsObject = {
       jerky: data
     };
-    console.log(hbsObject);
+    //console.log(hbsObject);
     res.render("order", hbsObject);
-    console.log(jerky);
+    
     
     
   });
@@ -27,16 +27,16 @@ router.post("/api/jerky", function(req, res) {
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
-    console.log(req.body)
-    console.log(req.body.flavor)
-    console.log(req.body.purchased)
+    // console.log(req.body)
+    // console.log(req.body.flavor)
+    // console.log(req.body.purchased)
   });
 });
 
 router.put("/api/jerky/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
+  //console.log("condition", condition);
 
   jerky.update({
     purchased: req.body.purchased
