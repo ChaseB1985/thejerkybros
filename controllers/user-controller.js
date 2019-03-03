@@ -55,14 +55,15 @@ router.get("/register", function(req, res){
   user.all(function(data) {
     var hbsObjectUser = {
       user: data,
-      "username":req.body.username,
-       email:req.body.email,
-       password:req.body.password,
+      // "username":req.body.username,
+      //  email:req.body.email,
+      //  password:req.body.password,
 
     };
     //console.log(hbsObject);
     res.render('login', hbsObjectUser);
     console.log(hbsObjectUser);
+    
   });
     //res.send('hello world'),
     console.log("Get User");
@@ -85,20 +86,20 @@ router.post("/api/user", function(req, res){
     });
 });
 
-router.put("/api/user/:id", function(req, res){
-    // res.send("Update Users")
-    var condition = "id = " + req.params.id;
-    console.log("condition", condition);
-    user.update({
-      username: req.body.username
-    }, condition, function(result){
-      if (result.changedRows == 0) {
-        return res.status(404).end();
-      } else {
-        res.status(200).end();
-      } 
-    });
-});
+// router.put("/api/user/:id", function(req, res){
+//     // res.send("Update Users")
+//     var condition = "id = " + req.params.id;
+//     console.log("condition", condition);
+//     user.update({
+//       username: req.body.username
+//     }, condition, function(result){
+//       if (result.changedRows == 0) {
+//         return res.status(404).end();
+//       } else {
+//         res.status(200).end();
+//       } 
+//     });
+// });
 
 router.delete("/api/user/:id", function(req, res){
     res.send("Delete Users")

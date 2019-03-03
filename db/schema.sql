@@ -6,16 +6,16 @@ USE jerky2_db;
  
 CREATE TABLE jerky (
   id INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR (12) NULL,
   flavor VARCHAR(45) NULL,
   price DECIMAL(10,2) NULL,
-  quantity INT NULL,
   purchased BOOLEAN DEFAULT false,
   PRIMARY KEY (id)
 );
 CREATE TABLE user (
 id INT NOT NULL AUTO_INCREMENT,
 `username` VARCHAR (12) NULL,
-`email` VARCHAR (15) NULL,
+`email` VARCHAR (30) NULL,
 `password` VARCHAR (12) NULL,
 PRIMARY KEY (id)
 );

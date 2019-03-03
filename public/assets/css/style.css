@@ -12,6 +12,7 @@
     }
     body {
       margin: 0;
+      
     }
     *, *:before, *:after {
       box-sizing: inherit;
@@ -94,4 +95,27 @@
     .input-group{
       margin-top: 30px;
       padding-top: 30px;
+    }
+    li {
+      font-family:"Comic Sans MS", cursive, sans-serif;
+      padding: 5px;
+      margin: 5px;
+      background: #fdfdfd;
+    }
+    
+    .label {
+      font-family:"Comic Sans MS", cursive, sans-serif;
+      padding: 5px;
+      margin: 5px;
+      font-weight: bold;
+    }
+    
+    .create-update-form {
+      padding: 5px;
+      margin: 5px;
+      background: aqua;
+    }
+    
+    .form-group {
+      margin-bottom: 5px;
     }

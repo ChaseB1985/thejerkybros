@@ -36,7 +36,7 @@ router.post("/api/jerky", function(req, res) {
 router.put("/api/jerky/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
-  //console.log("condition", condition);
+  console.log("condition", condition);
 
   jerky.update({
     purchased: req.body.purchased

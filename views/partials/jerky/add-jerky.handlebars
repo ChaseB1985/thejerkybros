@@ -1,8 +1,8 @@
 <li>
-    {{flavor}}
-    <button class='change-order' data-id='{{id}}' data-newOrder='{{added}}'>
-        {{#if added}}JERKY ADDED!{{else}}Jerky Deleted{{/if}}
-    </button>
+    <h1>{{flavor}}</h1>
+        {{#if added}}JERKY ADDED!{{else}}Jerky For Later{{/if}}
+    {{!-- <button class='change-order' data-id='{{id}}' data-newOrder='{{added}}'>
+    </button> --}}
 
     <button class="delete-order" data-id="{{this.id}}">DELETE!</button>
 </li>
