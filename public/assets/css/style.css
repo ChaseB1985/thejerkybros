@@ -51,7 +51,12 @@
 
     .panel1 { background-image:url(/public/assets/img/image2.jpeg); }
     .panel2 { background-image:url(/public/assets/img/image1.jpeg); }
-    .panel3 { background-image:url(/public/assets/img/brand.jpg); }
+    .panel3 { background-image:url(/public/assets/img/brand.jpg);
+    min-width: 30%; 
+    max-width: 40%;
+    min-height: 20%;
+    max-height: 50%;  
+  }
     .panel4 { background-image:url(/public/assets/img/image4.jpeg); }
     .panel5 { background-image:url(/public/assets/img/image3.jpeg); }
     
@@ -119,3 +124,5 @@
     .form-group {
       margin-bottom: 5px;
     }
+
+    

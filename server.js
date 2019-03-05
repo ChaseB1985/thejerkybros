@@ -7,7 +7,9 @@ const path = require('path');
 const connection = require('./config/connection');
 const cookieParser = require('cookie-parser');
 const exphbs = require('express-handlebars');
-
+const session = require('express-session');
+const passport = require('passport');
+const flash = require('connect-flash');
 const mysql = require('mysql');
 // const mysql2 = require('mysql2');
 // // controller imports
@@ -24,7 +26,7 @@ const PORT = process.env.PORT || 3000;
 // Requiring our models for syncing
 
 
-
+require('./config/passport')(passport);
 
 // Express middleware that allows POSTing data
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,8 +50,15 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-// hook up our controllers
-
+// passport stuff
+app.use(session({
+	secret: 'stuffcanalsobestuff',
+	resave: true,
+	saveUninitialized: true
+ } )); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash());
 //require("./routes/htmlRoutes")(app);
 app.use(routes);
 app.use(userController);
@@ -57,7 +66,7 @@ app.use(viewsController);
 
 // Requiring our models for syncing
 //const db = require('./models/index');
-
+require('./controllers/register-controller')(app, passport);
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
   // Log (server-side) when our server has started

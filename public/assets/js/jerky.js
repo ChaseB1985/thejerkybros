@@ -47,20 +47,22 @@ $(function() {
       );
     });
   
-    // $(".delete-order").on("click", function(event) {
-    //   var id = $(this).data("id");
+    $(".delete-order").on("click", function(event) {
+      var id = $(this).data("id");
   
-    //   // Send the DELETE request.
-    //   $.ajax("/api/jerky/" + id, {
-    //     type: "DELETE"
-    //   }).then(
-    //     function() {
-    //       console.log("deleted order", id);
-    //       // Reload the page to get the updated list
-    //       location.reload();
-    //     }
-    //   );
-    // });
+      // Send the DELETE request.
+      $.ajax("/api/jerky/" + id, {
+        type: "DELETE"
+      }).then(
+        function() {
+          console.log("deleted order", id);
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
+
+
     // $(".register").on("click", function(event) {
     //   var id = $(this).data("id");
     //   var newUserAdd = $(this).data("neworder");
