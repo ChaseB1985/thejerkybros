@@ -52,7 +52,7 @@ app.set('view engine', 'handlebars');
 
 // passport stuff
 app.use(session({
-	secret: 'stuffcanalsobestuff',
+	secret: 'liveyourlife',
 	resave: true,
 	saveUninitialized: true
  } )); // session secret
@@ -65,7 +65,7 @@ app.use(userController);
 app.use(viewsController);
 
 // Requiring our models for syncing
-//const db = require('./models/index');
+
 require('./controllers/register-controller')(app, passport);
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {

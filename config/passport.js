@@ -6,11 +6,13 @@ var LocalStrategy   = require('passport-local').Strategy;
 // load up the user model
 var mysql = require('mysql');
 var bcrypt = require('bcrypt-nodejs');
-var dbconfig = require('./database');
-//const user = require('../models/User');
-var connection = mysql.createConnection(dbconfig.connection);
-//var connection = require('../config/connection');
-connection.query('USE ' + dbconfig.database);
+const user = require('../models/User');
+
+// var dbconfig = require('./database');
+// var connection = mysql.createConnection(dbconfig.connection);
+// connection.query('USE ' + dbconfig.database);
+
+var connection = require('../config/connection');
 // expose this function to our app using module.exports
 module.exports = function(passport) {
 
@@ -27,7 +29,7 @@ module.exports = function(passport) {
 
     // used to deserialize the user
     passport.deserializeUser(function(id, done) {
-        connection.query("SELECT * FROM users WHERE id = ? ",[id], function(err, rows){
+        connection.query("SELECT * FROM user WHERE id = ? ",[id], function(err, rows){
             done(err, rows[0]);
         });
     });
@@ -49,7 +51,7 @@ module.exports = function(passport) {
         function(req, username, password, done) {
             // find a user whose email is the same as the forms email
             // we are checking to see if the user trying to login already exists
-            connection.query("SELECT * FROM users WHERE username = ?",[username], function(err, rows) {
+            connection.query("SELECT * FROM user WHERE username = ?",[username], function(err, rows) {
                 if (err)
                     return done(err);
                 if (rows.length) {
@@ -62,7 +64,7 @@ module.exports = function(passport) {
                         password: bcrypt.hashSync(password, null, null)  // use the generateHash function in our user model
                     };
 
-                    var insertQuery = "INSERT INTO users ( username, password ) values (?,?)";
+                    var insertQuery = "INSERT INTO user ( username, password ) values (?,?)";
 
                     connection.query(insertQuery,[newUserMysql.username, newUserMysql.password],function(err, rows) {
                         newUserMysql.id = rows.insertId;

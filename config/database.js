@@ -6,5 +6,5 @@ module.exports = {
         'password': 'hpjay1il27ry3qcp'
     },
 	'database': 'pf4s9aefrvqxw7p9',
-    'users_table': 'users'
+    'users_table': 'user'
 };

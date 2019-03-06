@@ -79,27 +79,27 @@ router.post("/api/user", function(req, res){
     ],[
       req.body.username, req.body.email, req.body.password
     ], function(result){
-      //res.json({ id: result.insertId });
-      res.redirect('/order');
+      res.json({ id: result.insertId });
+      //res.redirect('/order');
       //console.log(req.body.username);
       //console.log(result);
     });
 });
 
-// router.put("/api/user/:id", function(req, res){
-//     // res.send("Update Users")
-//     var condition = "id = " + req.params.id;
-//     console.log("condition", condition);
-//     user.update({
-//       username: req.body.username
-//     }, condition, function(result){
-//       if (result.changedRows == 0) {
-//         return res.status(404).end();
-//       } else {
-//         res.status(200).end();
-//       } 
-//     });
-// });
+router.put("/api/user/:id", function(req, res){
+    // res.send("Update Users")
+    var condition = "id = " + req.params.id;
+    console.log("condition", condition);
+    user.update({
+      username: req.body.username
+    }, condition, function(result){
+      if (result.changedRows == 0) {
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      } 
+    });
+});
 
 router.delete("/api/user/:id", function(req, res){
     res.send("Delete Users")
