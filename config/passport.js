@@ -8,14 +8,14 @@ var mysql = require('mysql');
 var bcrypt = require('bcrypt-nodejs');
 const user = require('../models/User');
 
-// var dbconfig = require('./database');
-// var connection = mysql.createConnection(dbconfig.connection);
-// connection.query('USE ' + dbconfig.database);
+var dbconfig = require('./database');
+var connection = mysql.createConnection(dbconfig.connection);
+connection.query('USE ' + dbconfig.database);
 
-var connection = require('../config/connection');
+//var connection = require('../config/connection');
 // expose this function to our app using module.exports
 module.exports = function(passport) {
-
+console.log("passportjs");
     // =========================================================================
     // passport session setup ==================================================
     // =========================================================================
@@ -70,7 +70,10 @@ module.exports = function(passport) {
                         newUserMysql.id = rows.insertId;
 
                         return done(null, newUserMysql);
+                        
                     });
+                    console.log(newUserMysql, "newsqluser");
+                    console.log(insertQuery, "insertQ")
                 }
             });
         })

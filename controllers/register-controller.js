@@ -1,30 +1,4 @@
-// var connection = require('../config/connection');
-// module.exports.register=function(req,res){
-//     //var today = new Date();
-//     var users={
-//         "username":req.body.username,
-//         "email":req.body.email,
-//         "password":req.body.password,
-//        // "created_at":today,
-//         //"updated_at":today
-//     }
-//     connection.query('INSERT INTO users SET ?',users, function (error, results, fields) {
-//       if (error) {
-//         res.json({
-//             status:false,
-//             message:'there are some error with query'
-//         })
-//       }else{
-//           res.json({
-//             status:true,
-//             data:results,
-//             message:'user registered sucessfully'
-//         })
-//       }
-//     });
-// }
 
-// app/routes.js
 module.exports = function(app, passport) {
 
     console.log('register con');
@@ -32,7 +6,7 @@ module.exports = function(app, passport) {
 	// HOME PAGE (with login links) ========
 	// =====================================
 	app.get('/', function(req, res) {
-		res.render('home.handlebars'); // load the index.ejs file
+		res.render('home.handlebars'); 
 	});
 
 	// =====================================
@@ -46,7 +20,7 @@ module.exports = function(app, passport) {
 	});
 
 	// process the login form
-	app.post('/login', passport.authenticate('local-login', {
+	app.post('/api/user', passport.authenticate('local-login', {
             successRedirect : '/profile', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
@@ -66,17 +40,18 @@ module.exports = function(app, passport) {
 	// SIGNUP ==============================
 	// =====================================
 	// show the signup form
-	app.get('/signup', function(req, res) {
+	app.get('/register', function(req, res) {
 		// render the page and pass in any flash data if it exists
 		res.render('login.handlebars', { message: req.flash('signupMessage') });
 	});
 
 	// process the signup form
-	app.post('/signup', passport.authenticate('local-signup', {
+	app.post('/register', passport.authenticate('local-signup', {
 		successRedirect : '/profile', // redirect to the secure profile section
-		failureRedirect : '/signup', // redirect back to the signup page if there is an error
-		failureFlash : true // allow flash messages
-	}));
+		failureRedirect : '/register', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
+        
+	},console.log('signup hit')));
 
 	// =====================================
 	// PROFILE SECTION =========================
@@ -102,9 +77,13 @@ module.exports = function(app, passport) {
 function isLoggedIn(req, res, next) {
 
 	// if user is authenticated in the session, carry on
-	if (req.isAuthenticated())
-		return next();
+    if (req.isAuthenticated())
+    console.log("auth", res )
+    console.log("auth2", isAuthenticated )
+    console.log("auth3", isLoggedIn )
+    return next();
 
 	// if they aren't redirect them to the home page
 	res.redirect('/');
 }
+

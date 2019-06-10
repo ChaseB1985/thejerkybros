@@ -45,45 +45,67 @@ const express = require("express");
 const router = express.Router();
 const user = require('../models/User');
 //const db = require("../models");
+/////////////
 
 
+///////////////////
+// router.get("/register", function(req, res){
+//     //res.send("Get Users")
+//     // router.get('/register', function(req, res){
+//   user.all(function(data) {
+//     var hbsObjectUser = {
+//       user: data,
+//       // "username":req.body.username,
+//       //  email:req.body.email,
+//       //  password:req.body.password,
 
-
-router.get("/register", function(req, res){
-    //res.send("Get Users")
-    // router.get('/register', function(req, res){
-  user.all(function(data) {
-    var hbsObjectUser = {
-      user: data,
-      // "username":req.body.username,
-      //  email:req.body.email,
-      //  password:req.body.password,
-
-    };
-    //console.log(hbsObject);
-    res.render('login', hbsObjectUser);
-    console.log(hbsObjectUser);
+//     };
+//     //console.log(hbsObject);
+//     res.render('login', hbsObjectUser);
+//     //console.log(hbsObjectUser);
+//     console.log(data, "data line");
     
-  });
-    //res.send('hello world'),
-    console.log("Get User");
-});
+//   });
+//     //res.send('hello world'),
+//     console.log("Get User");
+// });
 console.log("Get User");
 
+// router.post("/api/user", function(req, res){
+    
+//     user.create([
+//       'username', 'email', 'password'
+//     ],[
+//       req.body.username, req.body.email, req.body.password
+//     ], function(result){
+//       //res.json({ id: result.insertId });
+//       res.render("profile", {
+//         username: req.body.username,
+//         email: req.body.email
+//       });
+//       console.log(req.body.username, "username");
+//       console.log(result, "results");
+      
+
+//     });
+// });
 router.post("/api/user", function(req, res){
-    //res.send("Post Users"),
-    // res.send('hello world')
-    //res.render()
-    user.create([
-      'username', 'email', 'password'
-    ],[
-      req.body.username, req.body.email, req.body.password
-    ], function(result){
-      res.json({ id: result.insertId });
-      //res.redirect('/order');
-      //console.log(req.body.username);
-      //console.log(result);
+    
+  user.create([
+    'username', 'email', 'password'
+  ],[
+    req.body.username, req.body.email, req.body.password
+  ], function(result){
+    //res.json({ id: result.insertId });
+    res.render("profile", {
+      username: req.body.username,
+      email: req.body.email
     });
+    console.log(req.body.username, "username");
+    console.log(result, "results");
+    
+
+  });
 });
 
 router.put("/api/user/:id", function(req, res){

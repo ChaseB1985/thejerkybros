@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta');
+
 .active {
   color: #ee6e73;
   font-weight: 300;
@@ -11,6 +13,7 @@
       font-weight: 200;
     }
     body {
+      font-family: 'Mukta', sans-serif;
       margin: 0;
       
     }
@@ -105,7 +108,7 @@
       font-family:"Comic Sans MS", cursive, sans-serif;
       padding: 5px;
       margin: 5px;
-      background: #fdfdfd;
+      /* background: #fdfdfd; */
     }
     
     .label {
