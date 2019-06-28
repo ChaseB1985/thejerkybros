@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   {{!-- <head>
-    <title>Login</title>
+    <title>User Administration</title>
     {{> head}}
   </head> --}}
-  <head>
+    <head>
   <meta charset="UTF-8">
   <title>The Jerky Bros</title>
  
@@ -18,30 +18,27 @@
 </head>
   <body>
     <div class="container">
-      <div class="col-sm-6 col-sm-offset-3">
-        <h1>Login</h1>
-
-        {{#if message.length}}
-          <div class="alert alert-danger">{{ message }}</div>
-        {{/if}}
-
-        <form action="/login" method="post">
-          <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" name="email" required>
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="password" required>
-          </div>
-          <button type="submit" class="btn btn-info">Login</button>
-        </form>
-
-        <hr>
-
-        <p>Need an account? <a href="/signup">Signup</a></p>
-        <p>Or return to <a href="/">home</a>.</p>
+      <div class="page-header text-center">
+        <h1>User Administration</h1>
+        <a href="/logout" class="btn btn-info">Logout</a>
       </div>
+
+      <table class="table table-striped table-hover">
+        <thead>
+          <th>User ID</th>
+          <th>Email</th>
+          <th>Delete User?</th>
+        </thead>
+        <tbody>
+          {{#each users}}
+          <tr>
+            <td>{{ this.id }}</td>
+            <td>{{ this.email }}</td>
+            <td><a href="/delete/user/{{ this.id }}"><span class="glyphicon glyphicon-trash"></span></a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

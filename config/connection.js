@@ -26,7 +26,8 @@ if (process.env.JAWSDB_URL) {
         host: 'localhost',
         user: 'root',
         password: 'root',
-        database: 'jerky2_db'
+        // database: 'jerky2_db'
+        'database': 'pf4s9aefrvqxw7p9'
     })
 };
 

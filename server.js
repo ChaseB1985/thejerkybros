@@ -12,6 +12,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const mysql = require('mysql');
 // const mysql2 = require('mysql2');
+
 // // controller imports
 const userController = require('./controllers/user-controller');
 const viewsController = require('./controllers/views-controller');
@@ -26,7 +27,7 @@ const PORT = process.env.PORT || 3000;
 // Requiring our models for syncing
 
 
-require('./config/passport')(passport);
+
 
 // Express middleware that allows POSTing data
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -51,6 +52,7 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 // passport stuff
+require('./config/passport')(passport);
 app.use(session({
 	secret: 'liveyourlife',
 	resave: true,
@@ -59,6 +61,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash());
+
+// Set up routes and pass in configured passport
+require('./routes/index.js')(app);
+require('./routes/auth.js')(app, passport);
+
+
 //require("./routes/htmlRoutes")(app);
 app.use(routes);
 app.use(userController);
