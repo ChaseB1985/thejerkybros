@@ -1,0 +1,121 @@
+body{
+  font-family: 'Mukta', sans-serif;
+	/* height:100vh;
+	min-height:550px; */
+	background-image: url(https://images.pexels.com/photos/2098110/pexels-photo-2098110.jpeg?cs=srgb&dl=beef-delicious-dinner-2098110.jpg&fm=jpg);
+	background-repeat: no-repeat;
+	/* background-size:cover; */
+	background-position:center;
+	
+}
+p{
+  text-align: center;
+  color: black;
+  font-size: 20px;
+
+}
+/* h1,h2{
+  text-align: center;
+} */
+
+li {
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  padding: 5px;
+  margin: 5px;
+  /* background: #fcfbfa; */
+}
+
+.label {
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+  
+}
+.nav{
+  font-family:'helvetica neue';
+  padding: 10px; 
+  margin: 20px;
+}
+
+.materials{
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  padding: 5px;
+  margin: 5px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Arvo:700);
+@import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
+body {
+  background-color: #222;
+}
+.plate {
+  width: 410px;
+  margin: 10% auto;
+}
+.shadow {
+  color: #fff;
+  font-family: Arvo;
+  font-weight: bold;
+  text-shadow:
+    -3px -3px 0 #222,
+    3px -3px 0 #222,
+    -3px 3px 0 #222,
+    3px 3px 0 #222,
+    4px 4px 0 #fff,
+    5px 5px 0 #fff,
+    6px 6px 0 #fff,
+    7px 7px 0 #fff;
+  line-height: 0.8em;
+  letter-spacing: 0.1em;
+  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+  -moz-transform: scaleY(0.7);
+  margin:0;
+  text-align: center;
+}
+.script {
+  font-family: "Seaweed Script";
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+  margin:0;
+}
+.script span {
+  background-color: #222;
+  padding: 0 0.3em;
+}
+.script:before {
+  content:"";
+  display: block;
+  position: absolute;
+  z-index:-1;
+  top: 50%;
+  width: 100%;
+  border-bottom: 3px solid #fff;
+}
+.text1 {
+  font-size: 60px;
+}
+.text2 {
+  font-size: 169px;
+  text-align: center;
+}
+.text3 {
+  font-size: 100px;
+}
